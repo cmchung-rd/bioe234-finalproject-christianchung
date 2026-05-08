@@ -4,7 +4,7 @@
 
 ## Role
 
-Christian built the **visualization layer**, a 7-module package that transforms a raw simulation log into four distinct output artefacts: a multi-page PDF report, an interactive HTML dashboard, a GIF animation, and a statistics PNG.
+I built the **visualization layer**, a 7-module package that transforms a raw simulation log into four distinct output artefacts: a multi-page PDF report, an interactive HTML dashboard, a GIF animation, and a statistics PNG.
 
 ---
 
