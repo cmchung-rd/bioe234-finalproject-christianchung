@@ -1,0 +1,39 @@
+{
+  "id": "visualize_deck_state",
+  "name": "visualize_deck_state",
+  "mcp_name": "opentrons",
+  "description": "Parse an OT-2 simulation log and produce four visualisation artefacts saved under output/<run_id>/: a multi-page PDF report, an interactive Plotly HTML dashboard with animation, a GIF deck animation, and a statistics dashboard PNG.",
+  "inputs": [
+    {
+      "name": "simulation_log",
+      "type": "string",
+      "description": "Full text output from opentrons_simulate.",
+      "required": true
+    },
+    {
+      "name": "run_id",
+      "type": "string",
+      "description": "Optional identifier for the output subdirectory. Auto-generated from timestamp if omitted.",
+      "required": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string",
+      "description": "JSON string with protocol_name, steps_parsed, snapshots count, outputs (paths to pdf/html/gif/stats_png), and any per-format errors."
+    }
+  ],
+  "examples": [
+    {
+      "input": {
+        "simulation_log": "...",
+        "run_id": "serial_dilution_01"
+      },
+      "output": "{\"protocol_name\": \"Serial Dilution\", \"steps_parsed\": 128, \"snapshots\": 129, \"outputs\": {\"pdf\": \"output/serial_dilution_01/report.pdf\", \"html\": \"output/serial_dilution_01/dashboard.html\", \"gif\": \"output/serial_dilution_01/deck_animation.gif\", \"stats_png\": \"output/serial_dilution_01/stats_dashboard.png\"}, \"errors\": {}}"
+    }
+  ],
+  "execution_details": {
+    "seq_params": []
+  }
+}
